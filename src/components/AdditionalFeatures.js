@@ -6,9 +6,6 @@ import { connect } from 'react-redux';
 
 const AdditionalFeatures = props => {
 
-  const add = item => {
-    props.addNewFeature(item)
-  };
 
   return (
     <div className="content">
@@ -16,7 +13,7 @@ const AdditionalFeatures = props => {
       {props.additionalFeatures.length ? (
         <ol type="1">
           {props.additionalFeatures.map(item => (
-            <AdditionalFeature add={add} key={item.id} feature={item} />
+            <AdditionalFeature add={props.addNewFeature} key={item.id} feature={item} />
           ))}
         </ol>
       ) : (
